@@ -1,0 +1,4 @@
+// DiaRon Healthcare contact
+window.DIARON_PHONE_DISPLAY = '+91 87873 07435';
+window.DIARON_PHONE_TEL = '+918787307435';
+window.DIARON_PHONE_WA = '918787307435';
