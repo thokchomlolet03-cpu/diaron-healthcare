@@ -1,3 +1,13 @@
+// Replace the original damaged image assets with clean web-optimized copies.
+document.querySelectorAll('img').forEach(img => {
+  const src = img.getAttribute('src') || '';
+  if (src.endsWith('assets/clinic-dental.jpg')) {
+    img.setAttribute('src', 'assets/clinic-dental.webp');
+  } else if (src.endsWith('assets/clinic-doctor.jpg')) {
+    img.setAttribute('src', 'assets/clinic-doctor.webp');
+  }
+});
+
 // Keep the clinic contact details consistent across the whole site.
 const PHONE_DISPLAY_OLD = '+91 76290 25611';
 const PHONE_DISPLAY_NEW = '+91 87873 07435';
