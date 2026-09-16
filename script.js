@@ -35,6 +35,19 @@ document.querySelectorAll('script[type="application/ld+json"]').forEach(schema =
   }
 });
 
+// Correct OPD timings to match the clinic's latest published schedule.
+const medicinePanel = document.getElementById('medicine');
+if (medicinePanel) {
+  const rows = medicinePanel.querySelectorAll('.schedule-row');
+  rows.forEach(row => {
+    const day = row.querySelector('span')?.textContent.trim();
+    const time = row.querySelector('strong');
+    if (!time) return;
+    if (day === 'Thursday') time.textContent = '2:00 PM onwards';
+    if (day === 'Sunday') time.textContent = '9:00 AM onwards';
+  });
+}
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
 const tabs = [...document.querySelectorAll('.tab')];
